@@ -594,6 +594,8 @@ sub generate_preliminary {
         
         for my $slot (@syllable_structure) {
           my $r = rand(); 
+		{
+		no warnings qw(internal);
           while (my ($phone, $weight) = each %{$slot->{features}}) {
             $_ = $phone;
             s/u/./g;
@@ -620,6 +622,7 @@ sub generate_preliminary {
             }
           } # each %{$slot->{features}}
         } # @syllable_structure
+		}
 
         for my $fam (split / /, $f->{families}) {
           $_ = $precondition;
