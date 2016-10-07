@@ -17,7 +17,7 @@ sub initialise {
   my @inventory;
   my %phone_resolutions;
   my %resolution_expiries;
-  if (defined @{$args{inventory}}) {
+  if (@{$args{inventory}}) {
     @inventory = @{$args{inventory}};
   } elsif ($args{start} == $pd->{start_sequences}) {
     @inventory = keys %{$pd->{gen_inventory}};
