@@ -1,7 +1,7 @@
 package PhonologicalRule;
 use strict;
-use constant INF => 9**9**9; # is there really nothing sensible better?
-
+use constant INF => 9**9**9;
+# is there really nothing sensible better?
 # Each rule is a hash.  In the simplest case, it has hashes that
 # contain hashes with keys including {condition} and {effects},
 # giving the before and after of the rule in this position.
@@ -827,7 +827,7 @@ sub generate {
     # (This is intended for marked single phoneme rules.  In particular, the last-resort deletion
     # that these rules once had is now no more.)
     my %resolutions;
-    %resolutions = %{$d->{resolve}} if defined %{$d->{resolve}};
+    %resolutions = %{$d->{resolve}} if %{$d->{resolve}};
     $resolutions{'free 0'} = 1 unless keys %resolutions;
 
     while (($_, my $weight) = each %resolutions) {
